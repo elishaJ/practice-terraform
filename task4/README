@@ -1,0 +1,4 @@
+- Create 10 buckets using a bucket module
+- Disable public access	
+- Enable versioning
+- Enable cross account access for the buckets created

@@ -1,0 +1,4 @@
+Create an s3 bucket with
+- Public Access disabled
+- Versioning enabled
+- Enable cross account access for the bucket created

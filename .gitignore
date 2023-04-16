@@ -29,3 +29,4 @@ override.tf.json
 # example: *tfplan*
 
 .gitoken
+ec2module/

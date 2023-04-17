@@ -10,6 +10,7 @@ module "bucket-creation" {
 output "bucket-arn" {
   value = module.bucket-creation.*
 }
+
 # Resource to create IAM policy for bucket read/write access
 resource "aws_iam_policy" "allow_access_from_another_account" {
   policy = data.aws_iam_policy_document.allow_access_from_another_account.json
@@ -28,7 +29,10 @@ data "aws_iam_policy_document" "allow_access_from_another_account" {
       "s3:GetBucketLocation"
     ]
     resources = ["arn:aws:s3:::tf-bucket-task-*"]
+<<<<<<< HEAD
     //resources = ["${buc}"]
+=======
+>>>>>>> origin/main
   }
   statement {
     actions = [

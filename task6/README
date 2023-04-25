@@ -1,0 +1,2 @@
+Implement remote state file storage
+ - create AWS environment; s3 bucket + mongoDB table for locking

@@ -30,3 +30,4 @@ override.tf.json
 
 .gitoken
 ec2module/
+s3example/

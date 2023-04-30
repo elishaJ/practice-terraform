@@ -1,0 +1,6 @@
+Use a marketplace action to use Terraform and perform
+ - terraform init
+ - terraform plan
+ - terraform apply
+
+ ** Apply should only run on a successful push to the master branch

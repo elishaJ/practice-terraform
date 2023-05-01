@@ -1,7 +1,7 @@
 module "bucket-creation" {
   source = "./modules/s3creation"
   providers = {
-    aws = aws.Oregon
+    aws = aws.Virginia
   }
 }
 output "bucket-arn" {

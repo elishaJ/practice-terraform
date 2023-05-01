@@ -97,5 +97,3 @@ resource "aws_iam_role_policy_attachment" "attach-create-bucket-policy-to-role" 
   role       = aws_iam_role.github_workflow_role.name
   policy_arn = aws_iam_policy.github_create_bucket_access_policy.arn
 }
-
-

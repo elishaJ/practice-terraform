@@ -63,8 +63,8 @@ data "aws_iam_policy_document" "github_state_bucket_access_policy_def" {
       "s3:PutObject"
     ]
     resources = [
-      "arn:aws:s3:::bucket-for-git-actions.id/*",
-      "arn:aws:s3:::bucket-for-git-actions.id"
+      "arn:aws:s3:::s3-bucket-to-store-tfstate/*",
+      "arn:aws:s3:::s3-bucket-to-store-tfstate"
     ]
   }
 }

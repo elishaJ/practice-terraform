@@ -1,0 +1,30 @@
+resource "aws_iam_user" "git_action_user" {
+  name = "IAM-gitaction-user"
+}
+
+resource "aws_iam_access_key" "git_action_user_user_access_key" {
+  user = aws_iam_user.git_action_user.name
+}
+
+output "access_key_id" {
+  value = aws_iam_access_key.git_action_user_access_key.id
+}
+
+output "secret_access_key" {
+  value = aws_iam_access_key.git_action_user_access_key.secret
+}
+
+data "aws_iam_policy_document" "s3_bucket_policy_definition" {
+  statement {
+    sid       = "AllowS3BucketCreation"
+    effect    = "Allow"
+    actions   = ["s3:CreateBucket"]
+    resources = ["arn:aws:s3:::*"]
+  }
+}
+
+resource "aws_iam_policy" "s3_bucket_policy_for_git_action" {
+  name   = "s3-bucket-policy-for-gitaction"
+  user   = aws_iam_user.git_action_user.name
+  policy = data.aws_iam_policy_document.s3_bucket_policy_definition.json
+}
